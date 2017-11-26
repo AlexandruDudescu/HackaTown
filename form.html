@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title></title>
+  </head>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-light bg-light justify-content-between">
+  <div class="container-fluid">
+      <a class="navbar-brand">CPZ</a>
+
+      <form class="form-inline">
+        <div class="dropdown">
+            <button class="fa fa-envelope dropbtn"></button>
+              <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+        </div>
+
+          <div class="dropdown">
+              <button class="fa fa-bell-o dropbtn"></button>
+                <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+          </div>
+
+            <div class="dropdown">
+                <button class="fa fa-user-o dropbtn"></button>
+                  <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                  </div>
+            </div>
+
+
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+      </form>
+    </div>
+</nav>
+
+      <!-- Sidebar -->
+      <div class="left">
+        <div class="item nameApp">
+         <p id="Logo">Meniu:</p>
+        </div>
+        <div class="item active" >
+        <span class="glyphicon  fa fa-user-circle  fa-2x" ></span>
+            <a class= "aSidebar" href="#">Contul meu</a>  </div>
+        <div class="item">
+        <span class="glyphicon fa fa-users fa-2x"></span>
+            <a class= "aSidebar" href="form.html" >Forum</a></div>
+        <div class="item">
+        <span class="glyphicon fa fa-envelope fa-2x"></span>
+          <a class= "aSidebar" href="mesaje.html">Mesaje</a></div>
+        <div class="item">
+        <span class="glyphicon fa fa-address-book fa-2x"></span>
+        <a class= "aSidebar" href="#">Membri</a></div>
+        <div class="item">
+        <span  class="glyphicon fa fa-sign-out fa-2x "></span>
+            <a class= "aSidebar"  href="#">Logout</a></div>
+      </div>
+
+<!--Content-->
+<!--post a new message-->
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="panel-group" id="accordion">
+              <div class="panel panel-primary">
+                  <div class="panel-heading">
+                      <h4 class="panel-title">
+                          <a  id="nPost" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-file">
+                          </span>Post nou:</a>
+                      </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                      <input type="text" class="form-control" placeholder="Title" required />
+                                  </div>
+                                  <div class="form-group">
+                                      <textarea class="form-control" placeholder="Content" rows="5" required></textarea>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="category">
+                                          Category</label>
+                                      <select class="form-control" id="category">
+                                          <option>Articles</option>
+                                          <option>Tutorials</option>
+                                          <option>Freebies</option>
+                                      </select>
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="tags">
+                                          Tags</label>
+                                      <input type="text" class="form-control" id="tags" placeholder="Tags" />
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="well well-sm well-primary">
+                                      <div class="input-group image-preview">
+              <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+              <span class="input-group-btn">
+                  <!-- image-preview-clear button -->
+                  <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                      <span class="glyphicon glyphicon-remove"></span> Clear
+                  </button>
+                  <!-- image-preview-input -->
+                  <div class="btn btn-default image-preview-input">
+                      <span class="glyphicon glyphicon-folder-open"></span>
+                      <span class="image-preview-input-title">Browse</span>
+                      <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                  </div>
+              </span>
+          </div><!-- /input-group image-preview [TO HERE]-->
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="well well-sm well-primary">
+                                      <form class="form form-inline " role="form">
+                                      <div class="form-group">
+                                          <input type="text" class="form-control" value="" placeholder="Date" required />
+                                      </div>
+                                      <div class="form-group">
+                                          <select class="form-control">
+                                              <option>Draft</option>
+                                              <option>Published</option>
+                                          </select>
+                                      </div>
+                                      <div class="form-group">
+                                          <button type="submit" class="btn btn-success btn-sm">
+                                              <span class="glyphicon glyphicon-floppy-disk"></span>Save</button>
+                                          <button type="button" class="btn btn-default btn-sm">
+                                              <span class="glyphicon glyphicon-eye-open"></span>Preview</button>
+                                      </div>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+<!--view Messages-->
+
+<div class="container">
+	<div class="row">
+        <div class="">
+    <div class="one-post">
+        <!--Post Description-->
+        <div class="bd-radius">
+            <div class="post-post-content postMetaInline-media" style="">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 pd">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img src="http://www.freeiconspng.com/uploads/person-male-light-icon--vista-people-iconset--icons-land-20.png" class="media-object" alt="Sample Image">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading mg mg-t-5">
+                                <a href="#">
+                                    <span>Boss meow</span>
+                                </a>
+                            </h4>
+                            <span class="media-heading-muted"> Facts about cats</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 pd">
+                    <ul class="nav list-unstyled">
+                        <li>
+                            <div class="text-right timed">20 min ago</div>
+                        </li>
+                        <li>
+                            <div class="text-right timed">
+                                <a href="#">
+                                    <span> <i class="fa fa-map-marker"></i>  Pune</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="pd-b-10 pd-t-10 pd-r-15 pd-l-15" style="max-height: 250px;position: relative;overflow: hidden;">
+                <h4 class="mg mg-t-5 mg-b-5 posttitle-font">Facts about cats</h4>
+                <p class="mg postdesc-font" style="-webkit-transition: top 1s;-moz-transition: top 1s;-o-transition: top 1s;transition: top 1s;">
+                  The cat
+Cats have been domesticated for around 4,000 years. While they were once valued for their hunting abilities, they are now valued for their companionship and loving behaviour.
+While not well known, the collective nouns used for cats and kittens are a clowder of cats and a kindle of kittens.
+Our domestic cats are known as little cats. They differ from large cats such as lions and tigers because they are naturally active at night and can purr.
+Cats are now the most popular pet in the UK and in the US.
+                    <span class="readmore">
+                        <button class="btn btn-default backbtn ">
+                            <a href="" class="a-dec ">
+                                <span class="">Read More</span>
+                            </a>
+                        </button>
+                    </span>
+               </p>
+            </div>
+            <div class="post-post-content postMetaInline-media">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 pd">
+                    <ul class="nav list-unstyled">
+                        <li>
+                            <div class="icondisplay">
+                                <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    <svg class="svgIcon-use" width="23" height="23" viewBox="0 0 25 25">
+                                    <path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                                <span>55</span>
+                                <div class="line"></div>
+                                <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    <svg class="svgIcon-use" width="23" height="23" viewBox="0 0 25 25">
+                                    <path d="M12.5 21a.492.492 0 0 1-.327-.122c-.278-.24-.61-.517-.978-.826-2.99-2.5-7.995-6.684-7.995-10.565C3.2 6.462 5.578 4 8.5 4c1.55 0 3 .695 4 1.89a5.21 5.21 0 0 1 4-1.89c2.923 0 5.3 2.462 5.3 5.487 0 3.97-4.923 8.035-7.865 10.464-.42.35-.798.66-1.108.93a.503.503 0 0 1-.327.12zM8.428 4.866c-2.414 0-4.378 2.05-4.378 4.568 0 3.475 5.057 7.704 7.774 9.975.243.2.47.39.676.56.245-.21.52-.43.813-.68 2.856-2.36 7.637-6.31 7.637-9.87 0-2.52-1.964-4.57-4.377-4.57-1.466 0-2.828.76-3.644 2.04-.1.14-.26.23-.43.23-.18 0-.34-.09-.43-.24-.82-1.27-2.18-2.03-3.65-2.03z" fill-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                                <span>55</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!--Post Comment-->
+        <div class="bd-radius collapse" id="collapseExample">
+            <div class="subpostMetaInline-media">
+                <!--comment input design-->
+                <div class="media mg mg-t-5 mg-b-5">
+                    <div class="media-left">
+                        <a href="#" data-toggle="popover" data-html="true" data-placement='top' data-trigger="hover" title="Jhon Carter" data-content="Some content inside the popover">
+                            <img src="<?php echo base_url() ?>assets/img/bill.jpg" class="media-object" alt="Sample Image">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading mg mg-t-5">
+                            <a href="#" data-toggle="popover" data-html="true" data-placement='top' data-trigger="hover" title="Jhon Carter" data-content="Some content inside the popover">
+                                <span>Boss meow </span>
+                            </a>
+                        </h4>
+                        <span class="media-heading-muted"> Facts about cats
+                            <div class="line"></div>
+                            <a href="#" data-toggle="popover" data-html="true" data-placement='top' data-trigger="hover" title="Jhon Carter" data-content="Some content inside the popover">
+                                <span> <i class="fa fa-map-marker"></i>  Pune</span>
+                            </a>
+                        </span>
+
+                        <div class="pd-t-5">
+    <!--                        <input type="text" class="form-control commentpostinput" id="">-->
+                            <div class="form-group">
+                                <div class="icon-addon">
+                                    <input type="text" placeholder="Post Comment" class="form-control commentpostinput" id="PostComent" name="PostComent">
+                                    <label id="sendicon" class="fa fa-send" rel="tooltip" title="Send Post"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--comment Design-->
+                <div class="media mg mg-t-5 mg-b-5">
+                    <div class="media-left">
+                        <a href="#" data-toggle="popover" data-html="true" data-placement='top' data-trigger="hover" title="Jhon Carter" data-content="Some content inside the popover">
+                            <img src="<?php echo base_url() ?>assets/img/bill.jpg" class="media-object" alt="Sample Image">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading mg mg-t-5">
+                            <a href="#" data-toggle="popover" data-html="true" data-placement='top' data-trigger="hover" title="Jhon Carter" data-content="Some content inside the popover">
+                                <span>Meow</span>
+                            </a>
+                        </h4>
+                        <span class="media-heading-muted"> Facts about cats
+                            <div class="line"></div>
+                            <a href="#" data-toggle="popover" data-html="true" data-placement='top' data-trigger="hover" title="Jhon Carter" data-content="Some content inside the popover">
+                                <span> <i class="fa fa-map-marker"></i>  Pune</span>
+                            </a>
+                        </span>
+                        <ul class="nav list-unstyled pull-right">
+                            <li>
+                                <div class="text-right timed">20 min ago</div>
+                            </li>
+                        </ul>
+                        <div class="pd-b-10 pd-t-10" id="xyz">
+                            <h4  class="mg mg-t-5 mg-b-5 posttitle-font">Facts about cats</h4>
+                            <p class="postdesc-font">The cat
+Cats have been domesticated for around 4,000 years. While they were once valued for their hunting abilities, they are now valued for their companionship and loving behaviour.
+While not well known, the collective nouns used for cats and kittens are a clowder of cats and a kindle of kitFacts about catstens.
+Our domestic cats are known as little cats. They differ from large cats such as lions and tigers because they are naturally active at night and can purr.
+Cats are now the most popular pet in the UK and in the US.
+                                <small class="pull-right mg-t-5"><a href="" class="text-muted">view more</a></small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="media mg mg-t-5 mg-b-5">
+                    <div class="media-left">
+                        <a href="#" data-toggle="popover" data-html="true" data-placement='top' data-trigger="hover" title="Jhon Carter" data-content="Some content inside the popover">
+                            <img src="<?php echo base_url() ?>assets/img/bill.jpg" class="media-object" alt="Sample Image">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading mg mg-t-5">
+                            <a href="#" data-toggle="popover" data-html="true" data-placement='top' data-trigger="hover" title="Jhon Carter" data-content="Some content inside the popover">
+                                <span>Junior Meow</span>
+                            </a>
+                        </h4>
+                        <span class="media-heading-muted"> Facts about cats
+                            <div class="line"></div>
+                            <a href="#" data-toggle="popover" data-html="true" data-placement='top' data-trigger="hover" title="Jhon Carter" data-content="Some content inside the popover">
+                                <span> <i class="fa fa-map-marker"></i>  Pune</span>
+                            </a>
+                        </span>
+                        <ul class="nav list-unstyled pull-right">
+                            <li>
+                                <div class="text-right timed">20 min ago</div>
+                            </li>
+                        </ul>
+                        <div class="pd-b-10 pd-t-10">
+                            <h4 class="mg mg-t-5 mg-b-5 posttitle-font">Facts about cats</h4>
+                            <p class="postdesc-font">The cat
+Cats have been domesticated for around 4,000 years. While they were once valued for their hunting abilities, they are now valued for their companionship and loving behaviour.
+While not well known, the collective nouns used for cats and kittens are a clowder of cats and a kindle of kittens.
+Our domestic cats are known as little cats. They differ from large cats such as lions and tigers because they are naturally active at night and can purr.
+Cats are now the most popular pet in the UK and in the US.
+                                <small class="pull-right mg-t-5"><a href="" class="text-muted">view more</a></small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+</div>
+
+
+<script src="main.js"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
